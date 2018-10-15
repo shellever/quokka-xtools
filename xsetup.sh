@@ -20,8 +20,7 @@
 
 # store the current path
 PATH_CUR=`pwd`
-#CFG_FILE="~/.bashrc"
-#16,44s%~/\.bashrc%"$CFG_FILE"%g
+export PATH_XTOOLS=$PATH_CUR
 
 
 # make sure thath link.d has existed
