@@ -5,13 +5,6 @@
 # Date:   11/03/2017 02:40:58
 # Desc:   setup the tools 
 # Email:  shellever@163.com
-# Usage:  source xsetup.sh
-# History: 
-# 11/03/2017
-# 1. complete the initial function
-# 11/05/2017
-# 1. create the config file xtools_config.sh, and source it
-# in ~/.bashrc. 
 # 01/06/2018
 # 1. issues-20180106: 
 # when config env var in xtools_config.sh, it cannot take an
@@ -20,6 +13,7 @@
 
 # store the current path
 PATH_CUR=`pwd`
+# in first, export it for source configme.sh
 export PATH_XTOOLS=$PATH_CUR
 
 
