@@ -1,0 +1,8 @@
+# local configs directory
+link.d
+
+# backup file
+*.bak
+
+# ctags
+tags
