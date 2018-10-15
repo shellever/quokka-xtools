@@ -5,10 +5,6 @@
 # Date:   11/03/2017 02:40:58
 # Desc:   setup the tools 
 # Email:  shellever@163.com
-# 01/06/2018
-# 1. issues-20180106: 
-# when config env var in xtools_config.sh, it cannot take an
-# effect.
 ############################################################
 
 # store the current path
@@ -50,17 +46,21 @@ fi
 
 # firstly take a backup, and then append the configured lines
 cp -p ~/.bashrc{,.bak.`date "+%Y%m%d_%H%M%S"`}
-echo >> ~/.bashrc
-echo >> ~/.bashrc
-echo "##############################">> ~/.bashrc
-echo "# `whoami`" >> ~/.bashrc
-echo "# `date "+%m/%d/%Y %H:%M:%S"`" >> ~/.bashrc
-echo "export PATH_XTOOLS=$PATH_CUR" >> ~/.bashrc
-echo "export PATH=\$PATH_XTOOLS/link.d:\$PATH" >> ~/.bashrc
-echo >> ~/.bashrc
-echo "[ -f \$PATH_XTOOLS/config/xtools_config.sh ] && . \$PATH_XTOOLS/config/xtools_config.sh" >> ~/.bashrc
-echo "##############################">> ~/.bashrc
-echo >> ~/.bashrc
+cat >> ~/.bashrc << ok
+
+##################################################
+# quokka-xtools configs
+# `date "+%m/%d/%Y %H:%M:%S"`
+export PATH_XTOOLS=$PATH_CUR
+export PATH=\$PATH_XTOOLS/link.d:\$PATH
+
+[ -f \$PATH_XTOOLS/config/xtools_config.sh ] && {
+    . \$PATH_XTOOLS/config/xtools_config.sh
+}
+##################################################
+
+ok
+
 
 # take an effect right now
 source ~/.bashrc
