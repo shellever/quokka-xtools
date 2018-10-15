@@ -24,7 +24,6 @@ PATH_CUR=`pwd`
 #16,44s%~/\.bashrc%"$CFG_FILE"%g
 
 
-# symbolic links operations: remove and create
 # remove the previous symbolic links
 echo "===> remove the previous symbolic links"
 for link in `find link.d -type l`; do
@@ -72,21 +71,4 @@ source ~/.bashrc
 echo
 echo "The tools have successfully configured in ~/.bashrc"
 echo
-
-:<<BLOCK
-# symbolic links operations: remove and create
-# remove the previous symbolic links
-echo "===> remove the previous symbolic links"
-for link in `find link.d -type l`; do
-    echo "rm -f $link"
-    rm -f $link
-done
-
-# create symbolic links through sourcing the script configme.sh
-echo "===> source configme.sh to create symbolic links"
-for conf in `find script.d -type f -name configme.sh`; do
-    echo "source $conf"
-    source $conf
-done
-BLOCK
 
