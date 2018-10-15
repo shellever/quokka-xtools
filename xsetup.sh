@@ -24,6 +24,9 @@ PATH_CUR=`pwd`
 #16,44s%~/\.bashrc%"$CFG_FILE"%g
 
 
+# make sure thath link.d has existed
+mkdir -p link.d
+
 # remove the previous symbolic links
 echo "===> remove the previous symbolic links"
 for link in `find link.d -type l`; do
