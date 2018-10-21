@@ -16,7 +16,7 @@ XTOOLS_VERSION=1
 XTOOLS_RELEASE=0
 XTOOLS_EXTRAVERSION=0
 
-# env var config
+# terminal prompt
 export PS1="\[\e[32m\]Curdir\[\e[31m\]: \[\e[0m\]\w\n\[\e[33m\]\u@\h\[\e[0m\]\[\e[32m\]$\[\e[0m\] "
 
 
