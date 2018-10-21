@@ -7,18 +7,18 @@
 # Email:  shellever@163.com
 ############################################################
 
-# store the current path
-PATH_CUR=`pwd`
+# store the current root path
+PATH_CUR=$(cd $(dirname "${BASH_SOURCE}") && pwd)
 # in first, export it for source configme.sh
 export PATH_XTOOLS=$PATH_CUR
 
 
 # make sure thath link.d has existed
-mkdir -p link.d
+mkdir -p $PATH_CUR/link.d
 
 # remove the previous symbolic links
 echo "===> remove the previous symbolic links"
-for link in `find link.d -type l`; do
+for link in `find $PATH_CUR/link.d -type l`; do
     echo "rm -f $link"
     rm -f $link
 done
@@ -27,7 +27,7 @@ echo
 
 # create symbolic links through sourcing the script configme.sh
 echo "===> source configme.sh to create symbolic links"
-for conf in `find script.d -type f -name configme.sh`; do
+for conf in `find $PATH_CUR/script.d -type f -name configme.sh`; do
     echo "source $conf"
     source $conf
 done
