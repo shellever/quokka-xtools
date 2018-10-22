@@ -13,7 +13,7 @@ PATH_CUR=$(cd $(dirname "${BASH_SOURCE}") && pwd)
 export PATH_XTOOLS=$PATH_CUR
 
 
-# make sure thath link.d has existed
+# make sure that link.d has existed
 mkdir -p $PATH_CUR/link.d
 
 # remove the previous symbolic links
