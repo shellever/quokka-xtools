@@ -16,3 +16,10 @@ please type the following:
 ```
 $ source ~/.bashrc
 ```
+
+
+# Screenshots
+
+**Terminal Prompt**
+
+![Terminal Prompt](./screenshots/terminal-prompt.png "terminal prompt")
